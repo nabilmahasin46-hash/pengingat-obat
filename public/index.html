@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web pengingat obat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>💊 MedReminder & Stock</h1>
+            <p>Kelola kotak obat keluarga dan pantau masa kedaluwarsa.</p>
+        </header>
+
+        <div class="main-layout">
+            <div class="card form-container">
+                <h2>Tambah Obat Baru</h2>
+                <form id="medForm">
+                    <div class="form-group">
+                        <label for="nama_obat">Nama Obat</label>
+                        <input type="text" id="nama_obat" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kategori">Kategori</label>
+                        <select id="kategori">
+                            <option value="Tablet">Tablet</option>
+                            <option value="Sirup">Sirup</option>
+                            <option value="Kapsul">Kapsul</option>
+                            <option value="Salep">Salep</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="stok_saat_ini">Stok Awal</label>
+                            <input type="number" id="stok_saat_ini" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggal_kedaluwarsa">Tgl Kedaluwarsa</label>
+                            <input type="date" id="tanggal_kedaluwarsa" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lokasi_penyimpanan">Lokasi Penyimpanan</label>
+                        <input type="text" id="lokasi_penyimpanan" placeholder="Misal: Kotak P3K Dapur" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="catatan_dosis">Catatan Dosis</label>
+                        <textarea id="catatan_dosis" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Simpan Obat</button>
+                </form>
+            </div>
+
+            <div class="list-container">
+                <h2>Daftar Kotak Obat</h2>
+                <div id="medList" class="med-grid">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
