@@ -87,6 +87,6 @@ app.delete('/api/medicines/:id', (req, res) => {
 });
 
 // Jalankan server
-app.listen(PORT,"0.0.0.0", () => {
-    console.log(`Server berjalan di ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`🚀 KONSTRUKSI BERHASIL: Server aktif di port ${PORT}`);
 });
