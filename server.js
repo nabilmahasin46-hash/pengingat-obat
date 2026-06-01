@@ -5,8 +5,8 @@ const mysql = require('mysql2'); // Import mysql2 dengan promise untuk koneksi d
 const app = express();
 const PORT = process.env.PORT || 3000;// => Menentukan port untuk server, menggunakan variabel lingkungan PORT jika tersedia, atau default ke 3000
 app.use(cors({
-    origin: 'https://pengingat-obat.pages.dev' // izin untuk akses dari domain ini saja
-    methods: ['GET', 'POST', 'PATCH', 'DELETE'] // metode HTTP yang diizinkan      
+    origin: 'https://pengingat-obat.pages.dev', // izin untuk akses dari domain ini saja
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'], // metode HTTP yang diizinkan      
     credentials: true // jika perlu mengirim cookie atau header otentikasi
 }));
 
