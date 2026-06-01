@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const mySQL = require('mysql2/promise'); // Import mysql2 dengan promise untuk koneksi database
+const mySQL = require('mysql2'); // Import mysql2 dengan promise untuk koneksi database
 const app = express();
 const PORT = process.env.PORT || 3000;// => Menentukan port untuk server, menggunakan variabel lingkungan PORT jika tersedia, atau default ke 3000
 app.use(cors({
