@@ -1,9 +1,10 @@
+const BASE_URL = 'https://pengingat-obat-production.up.railway.app';
 const medForm = document.getElementById('medForm');
 const medList = document.getElementById('medList');
 
 // 1. READ DATA
 async function fetchMedicines() {
-    const res = await fetch('/api/medicines');
+    const res = await fetch(`${BASE_URL}/api/medicines`);
     const data = await res.json();
     
     // Urutkan berdasarkan tanggal kedaluwarsa terdekat
@@ -70,7 +71,7 @@ medForm.addEventListener('submit', async (e) => {
         catatan_dosis: document.getElementById('catatan_dosis').value,
     };
 
-    const res = await fetch('/api/medicines', {
+    const res = await fetch(`${BASE_URL}/api/medicines`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -87,7 +88,7 @@ medForm.addEventListener('submit', async (e) => {
 
 // 3. UPDATE DATA (Kurangi Stok)
 async function consumeMedicine(id) {
-    const res = await fetch(`/api/medicines/${id}/consume`, { method: 'PATCH' });
+    const res = await fetch(`${BASE_URL}/api/medicines/${id}/consume`, { method: 'PATCH' });
     if (res.ok) {
         fetchMedicines();
     } else {
@@ -99,7 +100,7 @@ async function consumeMedicine(id) {
 // 4. DELETE DATA
 async function deleteMedicine(id) {
     if (confirm('Apakah kamu yakin ingin menghapus obat ini dari kotak?')) {
-        await fetch(`/api/medicines/${id}`, { method: 'DELETE' });
+        await fetch(`${BASE_URL}/api/medicines/${id}`, { method: 'DELETE' });
         fetchMedicines();
     }
 }

@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const app = express();
-
 const PORT = process.env.PORT || 3000;// => Menentukan port untuk server, menggunakan variabel lingkungan PORT jika tersedia, atau default ke 3000
+app.use(cors({
+    origin: 'https://pengingat-obat.pages.dev' // izin untuk akses dari domain ini saja
+}));
 
 // Middleware agar server bisa membaca JSON dan melayani file statis
 app.use(express.json());
